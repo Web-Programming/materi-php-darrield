@@ -3,10 +3,10 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE 4 | Sidebar Mini</title>
+    <title>AdminLTE 4 | Layout Custom Area</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="AdminLTE 4 | Sidebar Mini" />
+    <meta name="title" content="AdminLTE 4 | Layout Custom Area" />
     <meta name="author" content="ColorlibHQ" />
     <meta
       name="description"
@@ -42,12 +42,12 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="http://127.0.0.1:8000/css/adminlte.css" />
+    <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
   <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg sidebar-mini sidebar-collapse bg-body-tertiary">
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <!--begin::Header-->
@@ -366,7 +366,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../layout/layout-custom-area.html" class="nav-link">
+                    <a href="../layout/layout-custom-area.html" class="nav-link active">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Layout <small>+ Custom Area </small></p>
                     </a>
@@ -378,7 +378,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../layout/collapsed-sidebar.html" class="nav-link active">
+                    <a href="../layout/collapsed-sidebar.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Sidebar Mini <small>+ Collapsed</small></p>
                     </a>
@@ -700,17 +700,33 @@
       <!--end::Sidebar-->
       <!--begin::App Main-->
       <main class="app-main">
+        <!--begin::App Content Top Area-->
+        <div class="app-content-top-area">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6"><div>App Content Top Area</div></div>
+              <div class="col-md-6 text-end">
+                <button type="submit" class="btn btn-primary" name="save" value="create">
+                  Create Admin
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Bottom Area-->
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Collapsed Sidebar</h3></div>
-              <div class="col-sm-6">
+              <div class="col-sm-8"><h3 class="mb-0">Layout Custom Area</h3></div>
+              <div class="col-sm-4">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Collapsed Sidebar</li>
+                  <li class="breadcrumb-item active" aria-current="page">Fixed Layout</li>
                 </ol>
               </div>
             </div>
@@ -763,6 +779,22 @@
           <!--end::Container-->
         </div>
         <!--end::App Content-->
+        <!--begin::App Content Bottom Area-->
+        <div class="app-content-bottom-area">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6"><div>App Content Bottom Area</div></div>
+              <div class="col-md-6 text-end">
+                <button type="submit" class="btn btn-secondary" name="save" value="create">
+                  Refresh
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Bottom Area-->
       </main>
       <!--end::App Main-->
       <!--begin::Footer-->

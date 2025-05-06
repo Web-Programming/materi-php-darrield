@@ -3,10 +3,10 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE 4 | Sidebar Mini</title>
+    <title>AdminLTE 4 | Icons</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="AdminLTE 4 | Sidebar Mini" />
+    <meta name="title" content="AdminLTE 4 | Icons" />
     <meta name="author" content="ColorlibHQ" />
     <meta
       name="description"
@@ -42,12 +42,12 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="http://127.0.0.1:8000/css/adminlte.css" />
+    <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
   <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg sidebar-mini sidebar-collapse bg-body-tertiary">
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <!--begin::Header-->
@@ -343,8 +343,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item menu-open">
-                <a href="#" class="nav-link active">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-clipboard-fill"></i>
                   <p>
                     Layout Options
@@ -378,7 +378,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../layout/collapsed-sidebar.html" class="nav-link active">
+                    <a href="../layout/collapsed-sidebar.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Sidebar Mini <small>+ Collapsed</small></p>
                     </a>
@@ -397,8 +397,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
                   <i class="nav-icon bi bi-tree-fill"></i>
                   <p>
                     UI Elements
@@ -413,7 +413,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../UI/icons.html" class="nav-link">
+                    <a href="../UI/icons.html" class="nav-link active">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Icons</p>
                     </a>
@@ -706,11 +706,11 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Collapsed Sidebar</h3></div>
+              <div class="col-sm-6"><h3 class="mb-0">Icons</h3></div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Collapsed Sidebar</li>
+                  <li class="breadcrumb-item active" aria-current="page">Icons</li>
                 </ol>
               </div>
             </div>
@@ -723,42 +723,30 @@
         <div class="app-content">
           <!--begin::Container-->
           <div class="container-fluid">
-            <!--begin::Row-->
+            <!-- Timelime example  -->
             <div class="row">
               <div class="col-12">
-                <!-- Default box -->
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Title</h3>
-                    <div class="card-tools">
-                      <button
-                        type="button"
-                        class="btn btn-tool"
-                        data-lte-toggle="card-collapse"
-                        title="Collapse"
-                      >
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-tool"
-                        data-lte-toggle="card-remove"
-                        title="Remove"
-                      >
-                        <i class="bi bi-x-lg"></i>
-                      </button>
+                <!-- The icons -->
+                <div class="col-12">
+                  <div class="card card-primary card-outline">
+                    <div class="card-header"><h3 class="card-title">Icons</h3></div>
+                    <div class="card-body">
+                      <p>You can use any font library you like with AdminLTE 4.</p>
+                      <strong>Recommendations</strong>
+                      <ul class="mt-1">
+                        <li><a href="https://fontawesome.com/" target="_blank">Font Awesome</a></li>
+                        <li>
+                          <a href="https://useiconic.com/open/" target="_blank">Iconic Icons</a>
+                        </li>
+                        <li><a href="https://ionicons.com/" target="_blank">Ion Icons</a></li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="card-body">Start creating your amazing application!</div>
-                  <!-- /.card-body -->
-                  <div class="card-footer">Footer</div>
-                  <!-- /.card-footer-->
                 </div>
-                <!-- /.card -->
               </div>
+              <!-- /.col -->
             </div>
-            <!--end::Row-->
+            <!-- /.row -->
           </div>
           <!--end::Container-->
         </div>
