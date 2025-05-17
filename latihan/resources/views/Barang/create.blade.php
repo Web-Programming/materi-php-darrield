@@ -1,3 +1,3 @@
 <div>
-    <!-- Nothing worth having comes easy. - Theodore Roosevelt -->
+    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
 </div>
