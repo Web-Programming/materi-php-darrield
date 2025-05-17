@@ -30,7 +30,17 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'nama' => 'required|min:5|max:20',
+            'kode_prodi' => 'required|min:2|max:2'
+            ]);
+
+            $prodi = new Prodi();
+            $prodi->nama = $validateData['nama'];//
+            $prodi->kode_prodi = $validateData['kode_prodi'];
+            $prodi->save();
+
+            return redirect("prodi")->with("status","Data Program Studi Berhasil Disimpan");
     }
 
     /**
