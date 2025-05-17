@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', "Halaman List Prodi")
+@section('title', "Halaman Detail Prodi")
 
 @section('content')
         <!--begin::App Content Header-->
@@ -13,7 +13,8 @@
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="{{ url("/") }}">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Program Studi</li>
+                  <li class="breadcrumb-item"><a href="{{ url("/prodi") }}">Program Studi</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Create Program Studi</li>
                 </ol>
               </div>
             </div>
@@ -54,39 +55,18 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    @if (session("status"))
-                      <div class="alert alert-success">
-                        {{ session("status")}}
-                      </div>
-                    @endif  
-
-                    <a href="{{url("/prodi/create" )}}" class="btn btn-small btn-success">
-                        Buat Prodi Baru
-                    </a>
-                   <table class="table table-bordered mt-2">
-                    <tr>
-                      <th>No</th>
-                      <th>Kode</th>
-                      <th>Nama</th>
-                      <th>Aksi</th>
-                    </tr>
-                    @foreach ($listprodi as $prodi) 
-                      <tr>
-                        <td>{{$loop->iteration}}</td>
-                        <td>{{$prodi->kode_prodi}}</td>
-                        <td>{{$prodi->nama}}</td>
-                        <td>
-                          <form action="delete">
-                            <a href="{{url("/prodi/".$prodi->id."/edit" )}}" class="btn btn-small btn-warning">
-                              Edit
-                            </a> 
-                            <button type="submit" class="btn btn-small btn-danger">Delete</button>
-                          </form>  
-                        </td>
-                      </tr>
-                    @endforeach
-                   </table>
-
+                    <form action="{{ url("/prodi")}}" method="post">
+                      @csrf
+                      <div class="">
+                        <label class="">Kode Prodi</label>
+                        <input class="form-control" type="text" name="kode_prodi">
+                      </div>   
+                      <div class="">
+                        <label class="">Nama Prodi</label>
+                        <input class="form-control" type="text" name="nama">
+                      </div>                            
+                      <button type="submit" class="btn btn-success">Simpan</button>
+                    </form>
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer">Footer</div>
