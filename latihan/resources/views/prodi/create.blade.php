@@ -33,7 +33,7 @@
                 <!-- Default box -->
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Crate Program Studi</h3>
+                    <h3 class="card-title">Create Program Studi</h3>
                     <div class="card-tools">
                       <button
                         type="button"
@@ -61,8 +61,18 @@
         </div>
     @endif
 
-    <form method="post" action="{{ url("prodi") }}">
+    <form method="post" action="{{ url("prodi") }}" enctype="multipart/form-data">
         @csrf
+
+
+        <div class="mb-3">
+            <label>Logo Prodi</label>
+            <input type="file" name="logo" class="form-control">
+            @error('logo')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
         <div class="mb-3">
             <label>Nama Prodi</label>
             <input type="text" name="nama" class="form-control" value="{{ old('nama') }}">

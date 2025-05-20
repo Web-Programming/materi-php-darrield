@@ -54,47 +54,44 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <a href="{{ url('prodi/create') }}" class="btn btn-success" >Buat Prodi Baru</a>
+                    <a href="{{ url('prodi/create') }}" class="btn btn-success">Buat Prodi Baru</a>
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
                     <table class="table table-bordered table-striped">
                       <thead>
                         <tr>
                           <th>No</th>
                           <th>Nama Prodi</th>
                           <th>Kode Prodi</th>
+                          <th>Logo</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ( $listprodi as $prodi)
-                          <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $prodi->nama }}</td>
-                            <td>{{ $prodi->kode_prodi }}</td>
-                            <td>
-                              <a href="{{ url('prodi/'.$prodi->id.'/edit') }}" >Edit</a>
-                              <form action="{{ url('prodi/'.$prodi->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-link">Delete</button>
-                              </form>
-                            </td>
-                          </tr>
+                        @foreach ($listprodi as $prodi)
+                        <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{ $prodi->nama }}</td>
+                          <td>{{ $prodi->kode_prodi }}</td>
+                          <td>{{ $prodi->logo }}</td>
+                          <td>
+                            <form action="{{ url('/prodi/' . $prodi->id) }}" method="post" style="display:inline">
+                              @csrf
+                              @method("DELETE")
+                              <a href="{{ url('/prodi/' . $prodi->id)}}" class="btn btn-link">Detail</a>
+                              <a href="{{ url('/prodi/' . $prodi->id . '/edit') }}" class="btn btn-link">Edit</a>
+                              <button type="submit" class="btn btn-link" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</button>
+                            </form>
+                          </td>
+                        </tr>
                         @endforeach
-                      </tbody>                 
+                      </tbody>
                     </table>
-
                   </div>
-                  <!-- /.card-body -->
                   <div class="card-footer">Footer</div>
-                  <!-- /.card-footer-->
-                </div>
-                <!-- /.card -->
-              </div>
-            </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
-        </div>
-        <!--end::App Content-->
+
 @endsection
 
