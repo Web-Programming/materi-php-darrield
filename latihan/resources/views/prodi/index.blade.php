@@ -54,7 +54,9 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <a href="{{ url('prodi/create') }}" class="btn btn-success">Buat Prodi Baru</a>
+                    @can('create', App\Models\Prodi::class)
+                    <a href="{{ url(auth()->user()->level.'prodi/create') }}" class="btn btn-success">Buat Prodi Baru</a>
+                    @endcan
                     @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
@@ -84,12 +86,18 @@
                               @endif
                           </td>
                           <td>
-                            <form action="{{ url('/prodi/' . $prodi->id) }}" method="post" style="display:inline">
+                            <form action="{{ url(auth()->user()->level.'/prodi/' . $prodi->id) }}" method="post" style="display:inline">
                               @csrf
                               @method("DELETE")
-                              <a href="{{ url('/prodi/' . $prodi->id)}}" class="btn btn-link">Detail</a>
-                              <a href="{{ url('/prodi/' . $prodi->id . '/edit') }}" class="btn btn-link">Edit</a>
+                              @can('view',$prodi)
+                              <a href="{{ url(auth()->user()->level.'/prodi/' . $prodi->id)}}" class="btn btn-link">Detail</a>
+                              @endcan
+                              @can('update',$prodi)
+                              <a href="{{ url(auth()->user()->level.'/prodi/' . $prodi->id . '/edit') }}" class="btn btn-link">Edit</a>
+                              @endcan
+                              @can('delete',$prodi)
                               <button type="submit" class="btn btn-link" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</button>
+                              @endcan
                             </form>
                           </td>
                         </tr>
